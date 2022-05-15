@@ -9,7 +9,13 @@ module.exports = {
     darkMode: 'media', // or 'media' or 'class'
     theme: {
         extend: {
-            fontFamily: {},
+            fontFamily: {
+                'serif': 'Courier New, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;'
+            },
+
+            dropShadow: {
+                'yellow': '0 0px 2px rgba(234, 179, 8, 1)',
+            }
         },
     },
     variants: {
