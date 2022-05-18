@@ -10,7 +10,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const WithYellowScrollWheel = styled.div`
   scrollbar-width: auto;
   scrollbar-color: rgba(234, 179, 8, 1) rgba(35, 35, 35, 1);
-  
+
   &::-webkit-scrollbar {
     width: 10px;
     height: 100%;
@@ -49,25 +49,25 @@ const activities: Activity[] = [
 
 
 const Home: NextPage = () => {
-
-  const renderedActivities = useMemo(() => _.map(activities, ({name}) =>
+  const renderedActivities = useMemo(() => _.map(activities, ({name}, idx) =>
     <p
+      key={`activity-${idx}`}
       className={'opacity-70 hover:opacity-100 hover:drop-shadow-lg hover:drop-shadow-yellow selection:text-black cursor-pointer'}>
       - {name}
     </p>
   ), []);
 
-  return <div className={'w-screen h-screen flex justify-center align-middle text-white text-sm selection:bg-green-600 selection:text-yellow-200 selection:bg-clip-text'}>
-    <div className={'bg-[#555555] drop-shadow-xl rounded-2xl rounded-tl-[4em] p-6 align-middle m-auto relative w-[30em] min-[30em]'}>
+  return <div className={'w-screen h-screen bg-slate-600 flex justify-center align-middle text-white text-sm selection:bg-green-600 selection:text-yellow-200 selection:bg-clip-text'}>
+    <div className={'bg-zinc-600 shadow-md shadow-neutral-800 rounded-2xl rounded-tl-[4em] p-6 align-middle m-auto relative max-w-[90vw] w-[40em] min-[30em]'}>
       <div className={'flex'}>
-        <div className={'flex-initial mr-2 min-w-[9em] relative -left-[2em] -top-[3em] h-[5em] w-[5em]'}>
-          <div className={'border-slate-100 border-4 rounded-full overflow-hidden h-[7em] w-[7em] drop-shadow relative top-0 left-0 transition-all duration-100 hover:h-[8em] hover:w-[7.5em] hover:h-[7.5em] hover:-left-[0.25em] hover:-top-[0.25em] hover:drop-shadow-lg hover:border-white'}>
+        <div className={'flex-initial relative mr-2 mb-6 min-w-[9em] -left-[2em] -top-[3em] h-[5em] w-[5em]'}>
+          <div className={'border-slate-100 border-4 rounded-full overflow-hidden h-[9em] w-[9em] drop-shadow top-0 left-0 transition-all duration-100 hover:h-[8em] hover:w-[10em] hover:h-[10em] hover:-left-[0.25em] hover:-top-[0.25em] hover:drop-shadow-lg hover:border-white'}>
             <Image className={'object-cover select-none'} width={200} height={200} src={'/ryan.jpg'} />
           </div>
         </div>
-        <WaveGraph className={'flex-auto rounded-md h-[4em]'} />
+        <WaveGraph className={'flex-auto rounded-md h-[5em]'} />
       </div>
-      <div className={'flex max-h-[6em] mb-[1em]'}>
+      <div className={'flex max-h-[7em] mb-[1em]'}>
         <div className={'flex-initial mr-2 min-w-[9em] max-w-[7em] w-[7em]'}>
           <p>Ryan Harrigan</p>
           <div className={'flex justify-start content-center'}>
